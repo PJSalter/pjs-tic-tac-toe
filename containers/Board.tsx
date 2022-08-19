@@ -11,9 +11,8 @@ function Board() {
   // set the winner at an origin value of null.
   const [winner, setWinner] = useState(null);
 
-  function setSquareValue(index){
+  function setSquareValue(index) {}
 
-  }
   return (
     <div>
       <p>Hey {currentPlayer}, it is your turn</p>
@@ -21,12 +20,21 @@ function Board() {
       {Array(9)
         .fill(null)
         .map((_, i) => {
-          return <Square key={i}
-          onClick={() => setSquareValue(i)} 
-          value={squares[i]/>;
+          return (
+            <Square
+              winner={winner}
+              key={i}
+              onClick={() => setSquareValue(i)}
+              value={squares[i]}
+            />
+          );
         })}
     </div>
   );
+}
+
+{
+  /*disable the square if there is a winner or not once on on-selective.*/
 }
 
 export default Board;
