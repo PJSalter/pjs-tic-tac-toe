@@ -10,9 +10,11 @@ function Square({
   onClick: () => void;
 }) {
   if (!value) {
-    return <button disabled={Boolean(winner)} />;
+    // now this has a value for the user to click on the square once they select it.
+    return <button onClick={onClick} disabled={Boolean(winner)} />;
   }
-  return <button>This is a square</button>;
+  // the button now refers to value
+  return <button disabled>{value}</button>;
 }
 
 export default Square;
