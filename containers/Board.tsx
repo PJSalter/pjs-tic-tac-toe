@@ -10,6 +10,10 @@ function Board() {
   );
   // set the winner at an origin value of null.
   const [winner, setWinner] = useState(null);
+
+  function setSquareValue(index){
+
+  }
   return (
     <div>
       <p>Hey {currentPlayer}, it is your turn</p>
@@ -18,7 +22,7 @@ function Board() {
         .fill(null)
         .map((_, i) => {
           return <Square key={i}
-          onClick={() => } 
+          onClick={() => setSquareValue(i)} 
           value={squares[i]/>;
         })}
     </div>
