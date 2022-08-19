@@ -11,7 +11,17 @@ function Board() {
   // set the winner at an origin value of null.
   const [winner, setWinner] = useState(null);
 
-  function setSquareValue(index) {}
+  function setSquareValue(index) {
+    const newData = squares.map((val, i) => {
+      if (i === index) {
+        return currentPlayer;
+      } else {
+        return val;
+      }
+    });
+    setSquares(newData);
+    setCurrentPlayer(currentPlayer === "X" ? "0" : "X");
+  }
 
   return (
     <div>
