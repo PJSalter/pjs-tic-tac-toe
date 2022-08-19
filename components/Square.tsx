@@ -11,10 +11,16 @@ function Square({
 }) {
   if (!value) {
     // now this has a value for the user to click on the square once they select it.
-    return <button onClick={onClick} disabled={Boolean(winner)} />;
+    return (
+      <button className="square" onClick={onClick} disabled={Boolean(winner)} />
+    );
   }
   // the button now refers to value
-  return <button disabled>{value}</button>;
+  return (
+    <button className={`square square_${value.toLowerCase}`} disabled>
+      {value}
+    </button>
+  );
 }
 
 export default Square;
