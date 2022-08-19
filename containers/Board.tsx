@@ -1,5 +1,6 @@
 // import Square from "../components/Square";
 import { useState } from "react";
+import Square from "../components/Square";
 
 function Board() {
   // create an array of nine elements
@@ -12,7 +13,14 @@ function Board() {
   return (
     <div>
       <p>Hey {currentPlayer}, it is your turn</p>
-      This is the board
+
+      {Array(9)
+        .fill(null)
+        .map((_, i) => {
+          return <Square key={i}
+          onClick={() => } 
+          value={squares[i]/>;
+        })}
     </div>
   );
 }
