@@ -1,11 +1,12 @@
+type Player = "X" | "0" | null;
 // defining the props
 function Square({
   value,
   onClick,
   winner,
 }: {
-  winner: string | null;
-  value: string | null;
+  winner: Player;
+  value: Player;
   onClick: () => void;
 }) {
   if (!value) {
