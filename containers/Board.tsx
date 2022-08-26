@@ -40,6 +40,9 @@ function Board() {
             );
           })}
       </div>
+      <button className="reset" onClick={reset}>
+        RESET
+      </button>
     </div>
   );
 }
