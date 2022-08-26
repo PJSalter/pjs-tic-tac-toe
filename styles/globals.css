@@ -19,7 +19,7 @@ a {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(3, 1fr);
-  margin: 5rem 23.8rem 15rem;
+  margin: 5rem 23.8rem 3rem;
 }
 
 .square {
@@ -42,6 +42,16 @@ a {
 p {
   font-size: 2rem;
   text-align: center;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
 }
 
 @media (prefers-color-scheme: dark) {
