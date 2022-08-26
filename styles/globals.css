@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -13,12 +13,13 @@ a {
 
 * {
   box-sizing: border-box;
-}
+} */
 
 .gridStyling {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(3, 1fr);
+  margin: 5rem 23.8rem 15rem;
 }
 
 .square {
@@ -28,6 +29,19 @@ a {
   color: #ffc0cb;
   background-color: #ae388b;
   border: solid 5px #b19cd9;
+}
+
+/* .square_o {
+  background-color: lightseagreen;
+}
+
+.square_x {
+  background-color: bisque;
+} */
+
+p {
+  font-size: 2rem;
+  text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
