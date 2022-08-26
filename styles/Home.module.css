@@ -114,7 +114,6 @@
     flex-direction: column;
   }
 }
-
 @media (prefers-color-scheme: dark) {
   .card,
   .footer {
