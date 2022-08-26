@@ -1,4 +1,4 @@
-type Player = "X" | "0" | null;
+type Player = "X" | "0" | "BOTH" | null;
 // defining the props
 function Square({
   value,
