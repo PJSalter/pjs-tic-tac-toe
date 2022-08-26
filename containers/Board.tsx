@@ -11,6 +11,16 @@ function Board() {
   // set the winner at an origin value of null.
   const [winner, setWinner] = useState(null);
 
+  //implementing the reset function.
+  function reset() {
+    //so I firstly need to reset the square so I will display set squares by default value.
+    setSquares(Array(9).fill(null));
+    // I need to set winner back to null.
+    setWinner(null);
+    //I need to choose a new current player.
+    setCurrentPlayer(Math.round(Math.random() * 1) === 1 ? "X" : "0");
+  }
+
   function setSquareValue(index) {
     const newData = squares.map((val, i) => {
       if (i === index) {
