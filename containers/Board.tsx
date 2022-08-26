@@ -1,6 +1,7 @@
 // import Square from "../components/Square";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Square from "../components/Square";
+type Player = "X" | "0" | "BOTH" | null;
 
 function Board() {
   // create an array of nine elements
@@ -9,7 +10,7 @@ function Board() {
     Math.round(Math.random() * 1) === 1 ? "X" : "0"
   );
   // set the winner at an origin value of null.
-  const [winner, setWinner] = useState(null);
+  const [winner, setWinner] = useState<Player>(null);
 
   //implementing the reset function.
   function reset() {
@@ -21,22 +22,22 @@ function Board() {
     setCurrentPlayer(Math.round(Math.random() * 1) === 1 ? "X" : "0");
   }
 
-  // function setSquareValue(index) {
-  //   console.log(index);
-  //   const newData = squares.map((val, i) => {
-  //     if (i === index) {
-  //       return currentPlayer;
-  //     } else {
-  //       return val;
-  //     }
-  //   });
-  //   setSquares(newData);
-  //   setCurrentPlayer(currentPlayer === "X" ? "0" : "X");
-  // }
+  function setSquareValue(index: number) {
+    console.log(index);
+    const newData = squares.map((val, i) => {
+      if (i === index) {
+        return currentPlayer;
+      } else {
+        return val;
+      }
+    });
+    setSquares(newData);
+    setCurrentPlayer(currentPlayer === "X" ? "0" : "X");
+  }
 
   // all the possible winnings.
 
-  function calculateWinner(squares) {
+  function calculateWinner(squares: Player[]) {
     // this shows all the possible wins from a player.
     const lines = [
       [0, 1, 2],
@@ -62,9 +63,25 @@ function Board() {
     return null;
   }
 
+  useEffect(() => {
+    const officialWinner = calculateWinner(squares);
+    if (officialWinner) {
+      setWinner(officialWinner);
+    }
+
+    if (!officialWinner && !squares.filter((square) => !square).length) {
+      setWinner("BOTH");
+    }
+  }, [squares]);
+
   return (
     <div>
       <p>Hey {currentPlayer}, it is your turn</p>
+      {winner && winner !== "BOTH" && <p>Congratulations {winner}</p>}
+      {winner && winner === "BOTH" && (
+        <p>Congratulations you are both winners</p>
+      )}
+
       <div className="gridStyling">
         {Array(9)
           .fill(null)
