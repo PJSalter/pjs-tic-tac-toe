@@ -21,16 +21,45 @@ function Board() {
     setCurrentPlayer(Math.round(Math.random() * 1) === 1 ? "X" : "0");
   }
 
-  function setSquareValue(index) {
-    const newData = squares.map((val, i) => {
-      if (i === index) {
-        return currentPlayer;
-      } else {
-        return val;
+  // function setSquareValue(index) {
+  //   console.log(index);
+  //   const newData = squares.map((val, i) => {
+  //     if (i === index) {
+  //       return currentPlayer;
+  //     } else {
+  //       return val;
+  //     }
+  //   });
+  //   setSquares(newData);
+  //   setCurrentPlayer(currentPlayer === "X" ? "0" : "X");
+  // }
+
+  // all the possible winnings.
+
+  function calculateWinner(squares) {
+    // this shows all the possible wins from a player.
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      // then getting each property from each line.
+      const [a, b, c] = lines[i];
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        return squares[a];
       }
-    });
-    setSquares(newData);
-    setCurrentPlayer(currentPlayer === "X" ? "0" : "X");
+    }
+    return null;
   }
 
   return (
