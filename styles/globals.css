@@ -15,14 +15,14 @@ a {
   box-sizing: border-box;
 }
 
-.gridStyling {
+/* .gridStyling {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: 6.3rem 6.3rem 10rem;
   grid-auto-flow: row;
   max-width: 19rem;
   margin-inline: auto;
-}
+} */
 
 .square {
   width: 100px;
