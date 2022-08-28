@@ -1,4 +1,5 @@
 // import Square from "../components/Square";
+import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Square from "../components/Square";
 type Player = "X" | "0" | "BOTH" | null;
@@ -82,7 +83,7 @@ function Board() {
         <p>Congratulations you are both winners</p>
       )}
 
-      <div className="gridStyling">
+      <GridStyling>
         {Array(9)
           .fill(null)
           .map((_, i) => {
@@ -95,7 +96,7 @@ function Board() {
               />
             );
           })}
-      </div>
+      </GridStyling>
       <button className="reset" onClick={reset}>
         RESET
       </button>
@@ -108,3 +109,12 @@ function Board() {
 }
 
 export default Board;
+
+const GridStyling = styled.div`
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 6.3rem 6.3rem 10rem;
+  grid-auto-flow: row;
+  max-width: 19rem;
+  margin-inline: auto;
+`;
