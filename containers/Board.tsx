@@ -1,4 +1,5 @@
 // import Square from "../components/Square";
+import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Square from "../components/Square";
 type Player = "X" | "0" | "BOTH" | null;
