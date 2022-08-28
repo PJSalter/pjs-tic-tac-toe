@@ -108,3 +108,12 @@ function Board() {
 }
 
 export default Board;
+
+const GridStyling = styled.div`
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 6.3rem 6.3rem 10rem;
+  grid-auto-flow: row;
+  max-width: 19rem;
+  margin-inline: auto;
+`;
