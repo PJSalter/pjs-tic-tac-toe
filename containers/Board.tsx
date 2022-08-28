@@ -82,7 +82,7 @@ function Board() {
         <p>Congratulations you are both winners</p>
       )}
 
-      <div className="gridStyling">
+      <GridStyling>
         {Array(9)
           .fill(null)
           .map((_, i) => {
@@ -95,7 +95,7 @@ function Board() {
               />
             );
           })}
-      </div>
+      </GridStyling>
       <button className="reset" onClick={reset}>
         RESET
       </button>
