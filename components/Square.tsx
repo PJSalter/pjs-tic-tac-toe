@@ -1,4 +1,5 @@
-type Player = "X" | "0" | "BOTH" | null;
+import styled, { keyframes } from "styled-components";
+type Player = "X" | "O" | "BOTH" | null;
 // defining the props
 function Square({
   value,
@@ -12,15 +13,45 @@ function Square({
   if (!value) {
     // now this has a value for the user to click on the square once they select it.
     return (
-      <button className="square" onClick={onClick} disabled={Boolean(winner)} />
+      <PressTheSquare
+        className="square"
+        onClick={onClick}
+        disabled={Boolean(winner)}
+      />
     );
   }
   // the button now refers to value
   return (
-    <button className={`square square_${value.toLowerCase}`} disabled>
+    <PressTheSquare
+      // className={`square_${value.toLowerCase}`}
+      as={LowerLetter}
+      disabled
+    >
       {value}
-    </button>
+    </PressTheSquare>
   );
 }
 
 export default Square;
+
+const LowerLetter = (value: any) => (
+  <PressTheSquare {...value}>{value.children.toLowerCase()}</PressTheSquare>
+);
+
+const PressTheSquare = styled.button`
+  width: 100px;
+  height: 100px;
+  font-size: 5rem;
+  color: #ffc0cb;
+  background-color: #ae388b;
+  border: solid 5px #b19cd9;
+  /* padding: 1rem; */
+  display: grid;
+  place-items: center;
+
+  &::before {
+    content: "";
+    display: block;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+`;
