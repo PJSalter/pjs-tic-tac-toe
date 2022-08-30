@@ -2,13 +2,13 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Square from "../components/Square";
-type Player = "X" | "0" | "BOTH" | null;
+type Player = "X" | "O" | "BOTH" | null;
 
 function Board() {
   // create an array of nine elements
   const [squares, setSquares] = useState(Array(9).fill(null));
-  const [currentPlayer, setCurrentPlayer] = useState<"X" | "0">(
-    Math.round(Math.random() * 1) === 1 ? "X" : "0"
+  const [currentPlayer, setCurrentPlayer] = useState<"X" | "O">(
+    Math.round(Math.random() * 1) === 1 ? "X" : "O"
   );
   // set the winner at an origin value of null.
   const [winner, setWinner] = useState<Player>(null);
@@ -20,7 +20,7 @@ function Board() {
     // I need to set winner back to null.
     setWinner(null);
     //I need to choose a new current player.
-    setCurrentPlayer(Math.round(Math.random() * 1) === 1 ? "X" : "0");
+    setCurrentPlayer(Math.round(Math.random() * 1) === 1 ? "X" : "O");
   }
 
   function setSquareValue(index: number) {
@@ -33,7 +33,7 @@ function Board() {
       }
     });
     setSquares(newData);
-    setCurrentPlayer(currentPlayer === "X" ? "0" : "X");
+    setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
   }
 
   // all the possible winnings.
