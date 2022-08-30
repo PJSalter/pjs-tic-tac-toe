@@ -1,4 +1,3 @@
-// import Square from "../components/Square";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Square from "../components/Square";
@@ -77,10 +76,12 @@ function Board() {
 
   return (
     <div>
-      <p>Hey {currentPlayer}, it is your turn</p>
-      {winner && winner !== "BOTH" && <p>Congratulations {winner}</p>}
+      <PlayerFate>Hey {currentPlayer}, it is your turn</PlayerFate>
+      {winner && winner !== "BOTH" && (
+        <PlayerFate>Congratulations {winner}</PlayerFate>
+      )}
       {winner && winner === "BOTH" && (
-        <p>Congratulations you are both winners</p>
+        <PlayerFate>Congratulations you are both winners</PlayerFate>
       )}
 
       <GridStyling>
@@ -117,4 +118,10 @@ const GridStyling = styled.div`
   grid-auto-flow: row;
   max-width: 19rem;
   margin-inline: auto;
+`;
+
+const PlayerFate = styled.p`
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Capriola", sans-serif;
 `;
