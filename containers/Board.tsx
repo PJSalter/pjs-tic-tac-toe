@@ -1,11 +1,3 @@
-// declare module "styled-transition-group" {
-//   import transition, { css } from "styled-transition-group";
-//   import type { StyledInterface } from "styled-components/macro";
-
-//   const transition: StyledInterface<CSSTransition>;
-//   export default transition;
-// }
-
 import styled, { css, keyframes } from "styled-components";
 // import Transition from "react-transition-group";
 import { useEffect, useState } from "react";
