@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-transition-group": "^4.4.5",
     "next": "12.2.5",
+    "postcss-preset-env": "^7.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.5",
