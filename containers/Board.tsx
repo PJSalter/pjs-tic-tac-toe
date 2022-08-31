@@ -120,8 +120,38 @@ const GridStyling = styled.div`
   margin-inline: auto;
 `;
 
+const RAINBOW_WIDTH = `calc(3em / 35)`;
+const WEIGHT_THAT_RAINBOW_FONT = "700";
+const RAINBOW_SPACE = `calc(1em / 8)`;
+const FONT_COLOR = `white`;
+const BACKGROUND_COLOR = `black`;
+const RAINBOW_PADDING = `calc(${RAINBOW_WIDTH} / 2)`;
+
 const PlayerFate = styled.p`
-  font-size: 2rem;
+  // postcssPresetEnv({ stage: 0 })
+  stroke-width: ${RAINBOW_WIDTH};
+  font-weight: ${WEIGHT_THAT_RAINBOW_FONT};
+  color: ${FONT_COLOR};
   text-align: center;
+  font-size: 1.2rem;
+  border-radius: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 25rem;
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    #09f1b8,
+    #00a2ff,
+    #ff00d2,
+    #fed90f
+  );
   font-family: "Capriola", sans-serif;
+  letter-spacing: ${RAINBOW_SPACE};
+  padding: ${RAINBOW_PADDING};
+  -webkit-text-stroke-color: transparent;
+  background-color: ${BACKGROUND_COLOR};
 `;
+function calc(arg0: number, arg1: number) {
+  throw new Error("Function not implemented.");
+}
