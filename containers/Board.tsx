@@ -1,4 +1,13 @@
-import styled from "styled-components";
+// declare module "styled-transition-group" {
+//   import transition, { css } from "styled-transition-group";
+//   import type { StyledInterface } from "styled-components/macro";
+
+//   const transition: StyledInterface<CSSTransition>;
+//   export default transition;
+// }
+
+import styled, { css, keyframes } from "styled-components";
+// import Transition from "react-transition-group";
 import { useEffect, useState } from "react";
 import Square from "../components/Square";
 type Player = "X" | "O" | "BOTH" | null;
@@ -98,9 +107,9 @@ function Board() {
             );
           })}
       </GridStyling>
-      <button className="reset" onClick={reset}>
+      <ResetRainbowButton className="opacity" onClick={reset}>
         RESET
-      </button>
+      </ResetRainbowButton>
     </div>
   );
 }
@@ -155,3 +164,96 @@ const PlayerFate = styled.p`
 function calc(arg0: number, arg1: number) {
   throw new Error("Function not implemented.");
 }
+
+const glowing = keyframes`
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+`;
+
+const RAINBOW_SPEED = `20s`;
+
+const ResetRainbowButton = styled.button`
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 5rem;
+
+  &:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation-name: ${glowing};
+    animation-duration: ${RAINBOW_SPEED};
+    animation-direction: linear;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    transition: none;
+    ${(opacity) =>
+      opacity &&
+      css`
+        transition: opacity 0.3s ease-in-out;
+      `};
+    border-radius: 10px;
+  }
+
+  &:active {
+    color: #000;
+  }
+
+  &:active:after {
+    background: transparent;
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+  &:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+`;
