@@ -21,6 +21,8 @@
 
 - 🌈 Theres a reset button to start again for a new match, if you hold down the reset button it glows a rainbow colour animation for interation.
 
+![game](https://user-images.githubusercontent.com/45575016/188998971-ac62cc45-e21a-42c3-b2da-7a23bee66b68.gif)
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
