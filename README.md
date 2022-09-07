@@ -1,5 +1,20 @@
 # :pinata: :roller_skate: PJS TIC TAC TOE :game_die: :magic_wand:
 
+## 🤩 About the Game:
+
+⁣⭕❕⭕❕❌
+➖➕➖➕➖
+⭕❕⁣❌❕⭕
+➖➕➖➕➖
+❌❕❌❕⭕
+
+- 🏆 A strategic battle by two users going head to head, who will win, both users will choose 'O' OR 'X' from one square within a grid layout of nine squares. The user who gets three similar symbols in a row will win the game. If no player wins then game ends with a draw.
+
+- 🎨 Rainbow messages will appear on who wins the match.
+
+- 🌈 Theres a reset button to start again for a new match, if you hold down the reset button it glows a rainbow colour animation for interation.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
