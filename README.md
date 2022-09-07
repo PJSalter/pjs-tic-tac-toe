@@ -2,11 +2,18 @@
 
 ## 🤩 About the Game:
 
-⁣⭕❕⭕❕❌
-➖➕➖➕➖
-⭕❕⁣❌❕⭕
-➖➕➖➕➖
-❌❕❌❕⭕
+
+<p align="center">
+ ⁣⭕ | ⭕ | ❌ 
+</p>
+<p align="center">
+ ⭕ |⁣ ❌ | ⭕ 
+</p>
+<p align="center">
+ ❌ | ❌ | ⭕ 
+</p> 
+
+
 
 - 🏆 A strategic battle by two users going head to head, who will win, both users will choose 'O' OR 'X' from one square within a grid layout of nine squares. The user who gets three similar symbols in a row will win the game. If no player wins then game ends with a draw.
 
