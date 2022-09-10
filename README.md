@@ -53,4 +53,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-# :sparkles: Deploy on netlify [here](https://pjs-tic-tac-toe.netlify.app/)
+# :sparkles: Deployed on netlify [here](https://pjs-tic-tac-toe.netlify.app/)
